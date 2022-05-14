@@ -40,7 +40,6 @@ function valida(){
 function guarda(p){
     /*Guardar Nueva Palabra y Empezar a Jugar*/
     arr[arr.length] = p;
-
     /*Activar key event y iniciar juego*/
     ctrl = true;
     jugar();
@@ -52,15 +51,12 @@ function jugar(){
     /* Selecciona una palabra aleatoria del array */
     var rand = Math.floor(Math.random()*arr.length);
     rValue = arr[rand];
-
     /* activar keypressed */
     ctrl=true;
-
     /*mostrar juego*/
     var ctn = document.getElementById("juego");
     ctn.style.display = "block"
     /* Vuelve visible el juego y oculta los botones de inicio */
-
     var btn1 = document.getElementById('inicio').style.display = "none";
     /* Guarda cada letra en un espacio del array */
     for(var i = 0; i < rValue.length; i++){
@@ -117,17 +113,14 @@ function getLetter(valor){
         /* Actualizar intentos y canvas */
         intentos--;
         document.getElementById('intent').innerHTML = 'Intentos: '+intentos;
-
         if(badWord.indexOf(valor) < 0){
         badWord[badWord.length] = valor;
         document.getElementById('pUsadas').style.display = "contents";
         document.getElementById('pUsadas').innerHTML = badWord.join(" ").toString();
         }
-
         /* get canvas */
         var canvas = document.getElementById("cvDraw");
         ctx.beginPath();
-
         if(intentos == 9){
             ctx.fillRect(0,190,200,10);
         }else if(intentos == 8){
@@ -136,15 +129,12 @@ function getLetter(valor){
             ctx.fillRect(40,0,80,10);
         }else if(intentos == 6){
             ctx.fillRect(110,0,10,40);
-
         }else if(intentos == 5){
             ctx.lineWidth = 8;
             ctx.arc(114, 58, 20, 0, 2 * Math.PI);
             ctx.stroke();
-
         }else if(intentos == 4){
             ctx.fillRect(110,80,10,40);
-
         }else if(intentos == 3){
             ctx.beginPath();
             ctx.moveTo(114, 118);
@@ -167,7 +157,6 @@ function getLetter(valor){
             ctx.stroke();
         }
         /*end canvas*/
-
         if(intentos == 0){
             document.getElementById("lose").style.display = "block";
             finGame();
@@ -211,10 +200,8 @@ function newJuego(){
     document.getElementById("lose").style.display = "none";
     document.getElementById("lose2").style.display = "none";
     document.getElementById("win").style.display = "none";
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById('intent').innerHTML = 'Intentos: '+intentos;
-
     intentos = 10;
     sel = [];
     badWord = [];
