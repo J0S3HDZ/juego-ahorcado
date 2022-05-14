@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+:root{
+    --light: #EEEDDE;
+    --yellow: #E0DDAA;
+    --dkblue: #203239;
+    --lgblue: #2b444e;
+    --dark: #141E27;
+    --dkred: #5e0000;
+    --dkgreen: #005e0d;
+    --dkyellow: #c0be92;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dkblue);
+}
+a:hover{
+    color: var(--lgblue);
+}
+body{
+    margin: 0;
+    background-color: var(--dark);
+}
+h6{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    font-size: 14px;
+}
+.teclado{
+    
+    align-items: center;
+    text-align: center;
+}
+.content2{
+    text-align: center;
+}
+.bannerLogo{
+    margin: auto;
+    padding: 10px;
+    width: 40%;
+}
+.btnInicio{
+    background-color: var(--dkblue);
+    padding: 25px;
+    border-radius: 10px;
+    width: auto;
+    margin: 5px;
+    color: var(--light);
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    transition: all .3s;  
+}
+.content{
+    margin: auto;
+    padding: 10px;
+    width: 60%;
+}
+.logo{
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.flex{
+    display: flex;
+}
+img.media{
+    width: 30px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    margin-bottom: 10px;
+
+}
+img{
+    height: 100%; 
+    width: 100%; 
+    object-fit: 'contain'
+
+}
+span{
+    width: auto;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--dkblue);
+    font-family: 'Rubik', sans-serif;
+}
+span.line{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-bottom: 3px solid var(--dkblue);
+    color: var(--yellow);
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+}
+span.spaceline{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-bottom: none;
+}
+.boxWords{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+    display: flex;
+}
+input{
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    background-color: var(--dkyellow);
+    width: 80%;
+    margin: 10px;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+
+    
+}
+input:focus, input:active{
+    border: none;
+}
+p{
+    background-color: transparent;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0%;
+}
+.block{
+    display: block;
+}
+#reglas{
+    color: #203239;
+    font-family: 'Rubik', sans-serif;
+    display: none;
+}
+.datos{
+    color: var(--dkyellow);
+    font-family: 'Rubik', sans-serif;
+    border-radius: 4px;
+    background-color: var(--dkblue);
+    padding: 8px;
+    text-align: center;
+    margin: 0 4px;
+    font-size: 14px;
+}
+.stats1{
+    margin: auto;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+.reload{
+    color: var(--dkyellow);
+    font-family: 'Rubik', sans-serif;
+    border-radius: 4px;
+    background-color: var(--dkblue);
+    padding: 8px;
+    text-align: center;
+    margin: 0 4px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition:  all 0.5s;
+
+}
+.reload:hover{
+    background-color: var(--lgblue);
+}
+#toast-qr{
+    visibility: hidden;
+    text-align: center;
+    z-index: 1;
+    min-width: 120px;
+    margin: auto;
+    width: 400px;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+
+    box-shadow: -15px 19px 35px -13px rgba(0,0,0,0.55);
+    -webkit-box-shadow: -15px 19px 35px -13px rgba(0,0,0,0.55);
+    -moz-box-shadow: -15px 19px 35px -13px rgba(0,0,0,0.55);
+}
+#toast-qr.show{
+    visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+#toast-qr.hide{
+    visibility: hidden;
+    -webkit-animation: fadeout 0.5s 2.5s;
+    animation: fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 35%; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 35%; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+    from {bottom: 35%; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+@keyframes fadeout {
+    from {bottom: 35%; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+.toastbtn{
+    padding: 8px;
+    background-color: var(--dkyellow);
+    font-size: 15px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+    color: var(--dkblue);
+    font-family: 'Rubik', sans-serif;
+    transition: all 0.5s;
+
+}
+.toastbtn:hover{
+    background-color: var(--dkblue);
+    color: var(--yellow);
+    cursor: pointer;
+
+}
+.game{
+    color: var(--yellow);
+    background: rgb(20,30,39);
+    background: linear-gradient(90deg, rgba(20,30,39,1) 0%, rgba(43,68,78,1) 50%, rgba(20,30,39,1) 100%);
+    padding: 10px;
+    display: none;
+}
+.msgGame{
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+canvas{
+        padding: 0;
+        margin: auto;
+        display: block;
+    
+}
