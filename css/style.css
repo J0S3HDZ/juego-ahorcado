@@ -308,7 +308,7 @@ p{
     color: var(--yellow);
     background: rgb(20,30,39);
     background: linear-gradient(90deg, rgba(20,30,39,1) 0%, rgba(43,68,78,1) 50%, rgba(20,30,39,1) 100%);
-    padding: 10px;
+    padding: 8px;
     display: none;
 }
 .msgGame{
@@ -337,13 +337,6 @@ button.lett{
     cursor: pointer;
     border: none;
     transition: all .3s;
-}
-button.red, button.red:hover{
-    background-color: var(--dkred);
-}
-button.green, button.green:hover{
-    background-color: var(--dkgreen);
-
 }
 button.lett:hover,.btnInicio:hover{
     background-color: var(--lgblue);

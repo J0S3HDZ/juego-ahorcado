@@ -46,7 +46,7 @@ function guarda(p){
 }
 
 function jugar(){
-    /* resetear variables */
+    document.getElementById("tcl").style.display = "visible";
     
     /* Selecciona una palabra aleatoria del array */
     var rand = Math.floor(Math.random()*arr.length);
@@ -85,6 +85,7 @@ function jugar(){
         document.getElementById('words').appendChild(element);
         aux++;
     }
+
 }
 /* Obtiene letra clickeada cuando esté en el juego*/
 
@@ -186,6 +187,12 @@ function finGame(){
     document.getElementById("lose").style.display = "block";
     document.getElementById("lose2").innerHTML = "La palabra es: "+rValue;
     document.getElementById("lose2").style.display = "contents";
+    document.getElementById("tcl").style.display = "none";
+
+    
+    
+
+
     ctrl = false;
 }
 function newJuego(){
@@ -200,6 +207,8 @@ function newJuego(){
     document.getElementById("lose").style.display = "none";
     document.getElementById("lose2").style.display = "none";
     document.getElementById("win").style.display = "none";
+    document.getElementById("tcl").style.display = "block";
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById('intent').innerHTML = 'Intentos: '+intentos;
     intentos = 10;
