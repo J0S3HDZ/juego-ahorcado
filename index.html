@@ -29,11 +29,14 @@
                 <span class="game" id="pUsadas"></span>
             </div>
             <div class="stats1 flex">
-                <div class=""><button class="reload" onclick="newJuego()">Juego nuevo</button></div>
-                <div class=""><button class="reload" onclick="window.location.reload()">Desistir</button></div>
+                <div class="">
+                    <button class="reload" onclick="newJuego()">Juego nuevo</button>
+                </div>
+                <div class="">
+                    <button class="reload" onclick="window.location.reload()">Desistir</button>
+                </div>
                 <div class="datos" id="intent">Intentos: 10</div>
             </div>
-
             <div class="teclado" id="tcl">
                 <button onclick="getLetter('A')" class="lett" id="A" >A</button>
                 <button onclick="getLetter('B')" class="lett" id="B" >B</button>
@@ -63,7 +66,6 @@
                 <button onclick="getLetter('Y')" class="lett" id="Y" >Y</button>
                 <button onclick="getLetter('Z')" class="lett" id="Z" >Z</button>
             </div>
-
             <img class="media" src="img/psycho.png">
             <span>Dev By Psycho - JoseHDZ &copy; 2022 | 
                 <a target="_blank" href="https://github.com/J0S3HDZ">GitHub</a> | 
@@ -74,7 +76,8 @@
         <div id="toast-qr" class="toast">
             <p>Introduce la palabra</p>
             <h6>Max. 8 letras.</h6>
-            <input type="text" id="palabra" onkeyup="upper()" maxlength="8" autocomplete="off" required><br>
+            <input type="text" id="palabra" onkeyup="upper()" maxlength="8" autocomplete="off" required>
+            <br>
             <button class="toastbtn" onclick="valida()" class="btnJoin">Guardar y Empezar</button>
             <button class="toastbtn" onclick="cancelAdd()" class="btnJoin">Cancelar</button>   
         </div>

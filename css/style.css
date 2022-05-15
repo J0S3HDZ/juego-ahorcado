@@ -143,8 +143,6 @@ h6{
     padding: 10px;
     width: 40%;
 }
-
-
 .logo{
     align-self: center;
     display: block;
@@ -164,13 +162,11 @@ img.media{
     margin-right: auto;
     margin-top:20px;
     margin-bottom: 10px;
-
 }
 img{
     height: 100%; 
     width: 100%; 
     object-fit: 'contain'
-
 }
 span{
     width: auto;
@@ -181,7 +177,6 @@ span{
     color: var(--dkblue);
     font-family: 'Rubik', sans-serif;
 }
-
 span.spaceline{
     width: 40px;
     height: 40px;
@@ -203,9 +198,7 @@ input{
     width: 80%;
     margin: 10px;
     font-size: 18px;
-    font-family: 'Rubik', sans-serif;
-
-    
+    font-family: 'Rubik', sans-serif;   
 }
 input:focus, input:active{
     border: none;
@@ -322,7 +315,6 @@ canvas{
         display: block;
     
 }
-
 button.lett{
     background-color: var(--dkblue);
     padding: 5px;
@@ -347,7 +339,6 @@ button.lett:hover,.btnInicio:hover{
 }
 button.lett:active,.btnInicio:active{
     background-color: var(--lgblue);
-
     transform: translateY(2px);
     transition-duration: .35s;
 }

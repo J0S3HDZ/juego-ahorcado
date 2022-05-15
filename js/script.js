@@ -5,19 +5,16 @@ var ctrl = false;
 var rValue;
 var badWord = [];
 var auxLinea;
-
 /* Canvas Ajuste */
 var canvas = document.getElementById("cvDraw");
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = "#E0DDAA";
         ctx.strokeStyle = "#E0DDAA";
-
 /*Ocultar sección de juego*/
 window.onload = function() {
     const  ctn = document.getElementById("juego");
     ctn.style.display = "none"
 };
-
 function upper(){
     var input = document.getElementById('palabra');
         input.onkeyup = function(){
@@ -44,10 +41,8 @@ function guarda(p){
     ctrl = true;
     jugar();
 }
-
 function jugar(){
     document.getElementById("tcl").style.display = "visible";
-    
     /* Selecciona una palabra aleatoria del array */
     var rand = Math.floor(Math.random()*arr.length);
     rValue = arr[rand];
@@ -67,9 +62,6 @@ function jugar(){
             sel[i] = rValue.charAt(i);
         }
     }
-
-
-
     /*Crear lineas de palabra*/
     var aux = 0;
     while(aux < sel.length){
@@ -85,10 +77,8 @@ function jugar(){
         document.getElementById('words').appendChild(element);
         aux++;
     }
-
 }
 /* Obtiene letra clickeada cuando esté en el juego*/
-
     document.onkeypress = function(evt) {
     if(ctrl ){  
         evt = evt || window.event;
@@ -99,7 +89,6 @@ function jugar(){
         }
     };
 }
-
 /*Obtiene la letra y hace la validacion */
 function getLetter(valor){
     var k = 0;
@@ -170,6 +159,7 @@ function getLetter(valor){
             }
             if(ax1 > sel.length-2){
                 document.getElementById("win").style.display = "block";
+                document.getElementById("tcl").style.display = "none";
                 ctrl = false;
                 
             }   
@@ -188,11 +178,6 @@ function finGame(){
     document.getElementById("lose2").innerHTML = "La palabra es: "+rValue;
     document.getElementById("lose2").style.display = "contents";
     document.getElementById("tcl").style.display = "none";
-
-    
-    
-
-
     ctrl = false;
 }
 function newJuego(){
@@ -208,7 +193,6 @@ function newJuego(){
     document.getElementById("lose2").style.display = "none";
     document.getElementById("win").style.display = "none";
     document.getElementById("tcl").style.display = "block";
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById('intent').innerHTML = 'Intentos: '+intentos;
     intentos = 10;
