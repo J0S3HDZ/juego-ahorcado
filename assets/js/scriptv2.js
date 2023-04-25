@@ -86,7 +86,6 @@ function playind() {
 
       /* ACTIVE READ KEYS CLICKED IN KEYBOARD */
       ctrl = true;
-      console.log(rValue);
 
       /* SAVE CLICKED WORDS IN SEL ARRAY*/
       for (var i = 0; i < rValue.length; i++) {
@@ -283,7 +282,6 @@ function playcust() {
 
   /* ACTIVE READ KEYS CLICKED IN KEYBOARD */
   ctrl = true;
-  console.log(rValue);
 
   /* SAVE CLICKED WORDS IN SEL ARRAY*/
   for (var i = 0; i < rValue.length; i++) {
@@ -511,7 +509,7 @@ function playAgain() {
   sel = [];
   badWord = [];
   intentos = 10;
-
+  clickeados = []
   ctrl = true;
   //get math number
   if (match == 2) {
@@ -555,7 +553,7 @@ function gotoMenu() {
   sel = [];
   badWord = [];
   intentos = 10;
-
+  clickeados = [];
   ctrl = false;
 
   const cards = document.querySelectorAll(".alert_card");
