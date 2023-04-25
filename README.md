@@ -11,6 +11,10 @@ Juego del Ahorcado (Hangman)
 ## ✔️ Versión 2
 - Nuevo diseño web.
 - Partidas custom (crea tu lista de palabras).
-- Nuevas opciones que serán funcionales en una versión siguiente. (sonidos,multiplayer,login,usuario,ads).
+- Nuevas opciones que serán funcionales en una versión siguiente.
 - Donativos a el desarrollador.
 - Lista de más de 5000 palabras.
+
+### Cambios pendientes de la versíon 2
+- Sitio responsivo.
+- Remover anuncios.
