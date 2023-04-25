@@ -39,7 +39,7 @@
         font-size: 20px;
     }
     #toast-qr{
-        visibility: hidden;
+        display: block;
         text-align: center;
         z-index: 1;
         min-width: 60px;
@@ -68,7 +68,7 @@
         width: 70%;
     }
     #toast-qr{
-        visibility: hidden;
+        display: block;
         text-align: center;
         z-index: 1;
         min-width: 120px;
@@ -254,7 +254,7 @@ p{
 }
 
 #toast-qr.show{
-    visibility: visible;
+    display: block;
     -webkit-animation: fadein 0.5s;
     animation: fadein 0.5s;
 }

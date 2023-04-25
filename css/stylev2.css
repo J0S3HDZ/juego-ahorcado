@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: 'upheavtt';
+    src: url('assets/fonts/upheavtt.ttf') format('truetype');
+}
+:root{
+    --primary: #00C55D;
+    --secundary: #fff;
+    --tertiary: #181A29;
+    --quaternary: #192230;
+    --quinary: #212A39;
+    --blue1: #29354b;
+    --blue2: #3c4b67;
+    --blue3: #253c52;
+    --green1: #009d49;
+    --green2: #007838;
+    --gray1: #303030;
+    --red1: #c50000;
+
+    --grad1: radial-gradient(circle, rgba(0, 197, 93) -60%, transparent 50%);
+
+}
+
+/* --- RESPONSIVE OBJECTS --- */
+@media  only screen and (max-width: 499px) {
+   
+}
+@media  only screen and (min-width: 500px) {
+
+}
+/* --- GENERAL --- */
+body{
+    background-color: var(--tertiary);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+ul,li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.content{
+    width: fit-content;
+    max-width: 100%;
+    margin: auto;
+    display: block;   
+}
+.dev{
+    color: var(--blue1);
+    font-size: 12px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+}
+.banner{
+    width: auto;
+    max-width: 750px;
+    padding: 40px;
+}
+.logo_banner{
+    max-width: 100%;
+}
+.main_menu{
+    padding: 20px;
+    display:block;
+    background-color: var(--quaternary);
+    width: 500px;
+    max-width: 100%;
+    margin:auto;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.main_menu li{
+    margin-bottom: 15px;
+}
+.main_menu li:last-child {
+    margin: 0;
+  }
+.main_submenu{
+    padding: 10px 20px;
+    display:flex;
+    background-color: var(--quaternary);
+    width: 500px;
+    max-width: 100%;
+    margin:auto;
+    border-radius: 20px; 
+}
+.main_submenu button{
+    margin-right: 10px;
+}
+.main_submenu button:last-child{
+    margin: 0;
+}
+.btn{
+    color: var(--secundary);
+    background-color: var(--quinary);
+    border: none;
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: var(--blue1);
+}
+.btn:active{
+    background-color: var(--blue2) ;
+}
+.btn.green{
+    background-color: var(--primary);
+    color: var(--secundary);
+}
+.btn.green:hover{
+    background-color: var(--green1);
+}
+.btn.green:active{
+    background-color: var(--green2);
+}
+
+p{
+    margin:0;
+    padding: 0;
+    color: var(--secundary);
+}
+label{
+    color: var(--secundary);
+}
+#lives{
+    width: 40px;
+    background-color: var(--blue2);
+    color: var(--secundary);
+    border: 2px solid var(--primary);
+    outline: none;
+    -moz-appearance: textfield;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.alert_card {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    background-color: transparent;
+    opacity:0; 
+    z-index:-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inside_card{
+    display:block;
+    max-width: 90%;
+    width: fit-content;
+    background-color: var(--quaternary);
+    border-radius: 20px;
+    border: 2px solid var(--primary);
+}
+.card_title {
+    color: var(--secundary);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: var(--quinary);
+}
+  
+  .card_title:first-of-type {
+    border-radius: 25px 25px 0 0;
+    color: var(--secundary);
+  }
+  
+.user_name{
+    padding: 10px 20px;
+    color: var(--secundary);
+    font-size: 18px;
+}
+#version{
+    padding: 10px 20px;
+    color: var(--blue2);
+    font-size: 16px;
+}
+hr{
+    margin: 0;
+    padding: 0;
+}
+.card_links{
+    color: var(--secundary);
+    text-decoration: underline;
+    font-size: 17px;
+    display: block;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+.card_links:hover{
+    color: var(--primary);
+}
+.btnclose{
+    color: var(--red1);
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border:none;
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+}
+textarea{
+    box-sizing: border-box; /* include padding and border in element's total width */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--quaternary);
+    border: none;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    color: var(--secundary);
+}
+.button_card{
+    padding: 0px 10px 10px 10px;
+}
+
+.game_box{
+    margin: auto;
+    width: 500px;
+    background-color: var(--quaternary);
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    display: block;
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+canvas{
+    padding: 0;
+    margin: auto;
+    display: block;
+}
+.game_content{
+    display: block;
+}
+.teclado{
+    display: block;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+.teclado_parts{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+.keyb{
+    display: flex;
+    background-color: var(--quinary);
+    border: none;
+    width: 32px;
+    border-radius: 10px;
+    color: var(--secundary);
+    margin: 2px;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.keyb:hover{
+    background-color: var(--blue1);
+}
+.keyb:active{
+    background-color: var(--blue2);
+}
+.btngame{
+    background-color: var(--quinary);
+    color: var(--secundary);
+    border: solid var(--quinary);
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    margin: 5px;
+    font-size: 12px;
+    transition: .3s;
+}
+.btngame:hover{
+    background-color: var(--blue1);
+    border: solid var(--blue1);
+
+}
+.btngame:active{
+    background-color: var(--blue2);
+    border: solid var(--blue2);
+
+}
+.stats{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.intent{
+    color: var(--secundary);
+    background-color: transparent;
+    border: 2px dotted var(--secundary);
+    width: 100%;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+hr{
+    background-color: transparent;
+    border: .1px solid var(--blue1);
+}
+button{
+    cursor: pointer;
+}
+.game_ends{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content_game_ends{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-height: 50%;
+  }
+  
+  .txt_game_end{
+    min-width: 50%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  .theword {
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    color: var(--secundary);
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--tertiary);
+    display: flex;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#finalw{
+    color: var(--primary);
+    padding: 0 5px;
+}
+.game_end_links{
+    display: flex;
+    background-color: var(--quaternary);
+    border-radius: 10px;
+}
+.game_end_links a{
+    color: var(--secundary);
+    background-color: var(--primary);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.badWord{
+    border: 2px solid var(--red1);
+}
+.keyb.badWord:disabled:hover{
+    border: 2px solid var(--red1);
+}
+.goodWord{
+    border: 2px solid var(--green1);
+}
+.keyb.goodWord:disabled:hover{
+    border: 2px solid var(--green1);
+}
+span{
+    width: auto;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--green1);
+}
+span.spaceline{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-bottom: none;
+}
+span.line{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-bottom: 3px solid var(--green1);
+    color: var(--green1);
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+}
+.boxWords{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+    display: flex;
+}

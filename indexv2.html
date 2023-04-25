@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description"
+        content="Juega al clásico juego del ahorcado de forma individual o crea partidas personalizadas. Próximamente podrás jugar online contra otros jugadores. ¡Diviértete adivinando palabras!">
+    <meta name="keywords"
+        content="hangman, juego del ahorcado, palabras, partidas personalizadas, jugar online, adivinanza, adivinar, multiplayer">
+    <meta name="robots" content="indexv2">
+    <title>Juego del ahorcado - Hangman | ES</title>
+    <link rel="stylesheet" href="css/stylev2.css">
+    <meta charset="UTF-8" lang="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="icon" href="assets/img/fav2.ico?v=2" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+</head>
+
+<body>
+    <section id="home" class="content animate__bounceIn">
+        <header class="banner">
+            <img src="assets/img/logov2.png" class="logo_banner " alt="">
+        </header>
+        <div style="position:relative;display:flex;justify-content:center;align-items:center">
+            <article id="main">
+                <div class="main_menu">
+                    <ul>
+                        <li>
+                            <button id="menubtn" class="btn" onclick="playind()">Partida individual</button>
+                        </li>
+                        <li>
+                            <button id="menubtn" class="btn" onclick="soon()">Partida en línea</button>
+                        </li>
+                        <li>
+                            <button id="menubtn" class="btn" onclick="playcustom()">Partida custom</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main_submenu">
+                    <button id="menubtn" onclick="soon()" class="btn green"
+                        style="display: flex;justify-content: space-between;align-items: center;">Iniciar sesión
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-google" viewBox="0 0 16 16">
+                            <path
+                                d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                        </svg>
+                    </button>
+                    <button id="menubtn" onclick="soon()" class="btn" style="width: fit-content;padding: 0 18px;"><i
+                            class="bi bi-volume-up-fill"></i></button>
+                    <button id="menubtn" onclick="config()" class="btn" style="width: fit-content;padding: 0 18px;"><i
+                            class="bi bi-gear-fill"></i></button>
+                </div>
+            </article>
+            <!---  GAME VIEW ----->
+            <article class="game_box" id="gamev">
+                <canvas id="cvDraw" width="200" height="200" style="border: none;">Canvas is not supported</canvas>
+                <br>
+                <article class="game_content">
+                    <div style="display: flex;">
+                        <div class="boxWords" id="words"></div>
+                    </div>
+                    <div class="stats">
+                        <button class="btngame" onclick="playAgain()">Juego nuevo</button>
+                        <button class="btngame" onclick="gotoMenu()">Desistir</button>
+                        <div class="intent" id="intent">Intentos: _</div>
+                        <button class="btngame" onclick="soon()" style="width: fit-content;"><i
+                                class="bi bi-volume-up-fill"></i></button>
+                    </div>
+
+                    <div class="teclado" id="tcl">
+                        <hr>
+                        <br>
+                        <div class="teclado_parts">
+                            <button onclick="getLetter('Q')" class="keyb" id="Q">Q</button>
+                            <button onclick="getLetter('W')" class="keyb" id="W">W</button>
+                            <button onclick="getLetter('E')" class="keyb" id="E">E</button>
+                            <button onclick="getLetter('R')" class="keyb" id="R">R</button>
+                            <button onclick="getLetter('T')" class="keyb" id="T">T</button>
+                            <button onclick="getLetter('Y')" class="keyb" id="Y">Y</button>
+                            <button onclick="getLetter('U')" class="keyb" id="U">U</button>
+                            <button onclick="getLetter('I')" class="keyb" id="I">I</button>
+                            <button onclick="getLetter('O')" class="keyb" id="O">O</button>
+                            <button onclick="getLetter('P')" class="keyb" id="P">P</button>
+                        </div>
+                        <div class="teclado_parts">
+                            <button onclick="getLetter('A')" class="keyb" id="A">A</button>
+                            <button onclick="getLetter('S')" class="keyb" id="S">S</button>
+                            <button onclick="getLetter('D')" class="keyb" id="D">D</button>
+                            <button onclick="getLetter('F')" class="keyb" id="F">F</button>
+                            <button onclick="getLetter('G')" class="keyb" id="G">G</button>
+                            <button onclick="getLetter('H')" class="keyb" id="H">H</button>
+                            <button onclick="getLetter('J')" class="keyb" id="J">J</button>
+                            <button onclick="getLetter('K')" class="keyb" id="K">K</button>
+                            <button onclick="getLetter('L')" class="keyb" id="L">L</button>
+                            <button onclick="getLetter('Ñ')" class="keyb" id="Ñ">Ñ</button>
+                        </div>
+                        <div class="teclado_parts">
+                            <button onclick="getLetter('Z')" class="keyb" id="Z">Z</button>
+                            <button onclick="getLetter('X')" class="keyb" id="X">X</button>
+                            <button onclick="getLetter('C')" class="keyb" id="C">C</button>
+                            <button onclick="getLetter('V')" class="keyb" id="V">V</button>
+                            <button onclick="getLetter('B')" class="keyb" id="B">B</button>
+                            <button onclick="getLetter('N')" class="keyb" id="N">N</button>
+                            <button onclick="getLetter('M')" class="keyb" id="M">M</button>
+                        </div>
+                    </div>
+                </article>
+            </article>
+        </div>
+
+    </section>
+
+
+    <!-- settings card -->
+    <section class="alert_card" id="settings">
+        <div class="inside_card">
+            <div style="position:relative">
+                <button style="position: absolute;right:-35px" onclick="closeCard()" class="btnclose"><i
+                        class="bi bi-x-lg"></i></button>
+            </div>
+            <p class="card_title">Información del usuario</p>
+            <p class="user_name"><b>Usuario: </b><span id="localUser">guest7809124312</span></p>
+            <p class="card_title">Información del juego</p>
+            <a class="card_links" href="#">Eliminar anuncios</a>
+            <a class="card_links" href="https://www.buymeacoffee.com/psychomx">Apoyar al desarrollador</a>
+            <hr>
+            <p id="version">Release v2.0</p>
+        </div>
+
+    </section>
+
+    <!-- LISTA DE PALABRAS -->
+    <section class="alert_card" id="myList">
+        <div class="inside_card">
+            <div style="position: relative;">
+                <button style="position: absolute;right:-35px" onclick="closeCard()" class="btnclose"><i
+                        class="bi bi-x-lg"></i></button>
+            </div>
+            <p class="card_title">Crea tu lista de palabras</p>
+            <textarea name="" id="taList" cols="30" rows="10" value=""
+                placeholder="Escribe las palabras separadas por una coma ',' Recuerda: NO numeros ni simbolos">
+                </textarea>
+            <div class="button_card">
+                <button id="saveList" class="btn green">Guardar y jugar</button>
+            </div>
+        </div>
+    </section>
+    <!-- AJUSTES DE PARTIDA CUSTOM -->
+    <section class="alert_card" id="customMatch">
+        <div class="inside_card">
+            <div style="position: relative;">
+                <button style="position: absolute;right:-35px" onclick="closeCard()" class="btnclose"><i
+                        class="bi bi-x-lg"></i></button>
+            </div>
+            <p class="card_title">Ajustes de partida</p>
+            <div style="padding:10px">
+                <p>Jugar con:</p>
+                <div style="display:block">
+                    <input type="radio" name="opc" id="opc1" checked required>
+                    <label for="opc1">Lista del juego</label>
+                    <input type="radio" name="opc" id="opc2">
+                    <label for="opc2">Crear mi lista</label>
+                </div>
+                <!--<p>Intentos</p>-->
+                <!--<input required type="number" name="" value="10" readon id="lives" max="99" maxlength="2" min="1" oninput="this.value = this.value.slice(0, 2)">-->
+            </div>
+
+            <div class="button_card">
+                <button id="continueCustom" onclick="readyCG()" class="btn green">Continunar</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="game_ends" id="win" style="opacity:0; display:flex; z-index:-1;">
+        <div class="content_game_ends">
+            <img class="txt_game_end" src="assets/img/winner-imgs/textwin2.png">
+            <p class="theword">La palabra era: <a id="finalw">_</a></p>
+            <div class="game_end_links">
+                <a onclick="playAgain()">Volver a jugar</a>
+                <a onclick="gotoMenu()">Volver al menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="game_ends" id="lose" style="opacity:0; display:flex; z-index:-1;">
+        <div class="content_game_ends">
+            <img class="txt_game_end" src="assets/img/loser-imgs/loseimg2.png">
+            <p class="theword">La palabra era: <a id="finalw">_</a></p>
+            <div class="game_end_links">
+                <a style="cursor:pointer" onclick="playAgain()">Volver a jugar</a>
+                <a style="cursor:pointer" onclick="gotoMenu()">Volver al menu</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="dev">Powered by Psycho | All rights reserved &copy; 2023 | Release v2.0</div>
+
+</body>
+<script src="assets/js/script-release.js"></script>
+
+</html>
