@@ -56,12 +56,8 @@ function playind() {
 
       /* CLOSE MAIN NAV */
       const m = document.getElementById("main");
-      document
-        .getElementById("main")
-        .classList.remove("animate__animated", "animate__fadeOutUp");
-      document
-        .getElementById("main")
-        .classList.add("animate__animated", "animate__fadeOutLeft");
+      m.classList.remove("animate__animated", "animate__fadeOutUp");
+      m.classList.add("animate__animated", "animate__fadeOutLeft");
       m.style.opacity = 0;
       m.style.zIndex = -1;
 
@@ -125,14 +121,11 @@ function isElementVisible(elem) {
 /* SAVE USER LIST */
 
 function playcustom() {
-  document
-    .getElementById("customMatch")
-    .classList.remove("animate__animated", "animate__fadeOutUp");
-  document
-    .getElementById("customMatch")
-    .classList.add("animate__animated", "animate__fadeInUp");
-  document.getElementById("customMatch").style.opacity = 1;
-  document.getElementById("customMatch").style.zIndex = 2;
+  const cm = document.getElementById("customMatch");
+  cm.classList.remove("animate__animated", "animate__fadeOutUp");
+  cm.classList.add("animate__animated", "animate__fadeInUp");
+  cm.style.opacity = 1;
+  cm.style.zIndex = 2;
 
   const mb = document.querySelectorAll("#menubtn");
   mb.forEach((button) => {
@@ -141,14 +134,11 @@ function playcustom() {
 }
 
 function readyCG() {
-  document
-    .getElementById("customMatch")
-    .classList.remove("animate__animated", "animate__fadeInUp");
-  document
-    .getElementById("customMatch")
-    .classList.add("animate__animated", "animate__fadeOutUp");
-  document.getElementById("customMatch").style.opacity = 0;
-  document.getElementById("customMatch").style.zIndex = -1;
+  const cm = document.getElementById("customMatch");
+  cm.classList.remove("animate__animated", "animate__fadeInUp");
+  cm.classList.add("animate__animated", "animate__fadeOutUp");
+  cm.style.opacity = 0;
+  cm.style.zIndex = -1;
   const mb = document.querySelectorAll("#menubtn");
   mb.forEach((button) => {
     button.disabled = true;
@@ -252,12 +242,8 @@ function playcust() {
 
   /* CLOSE MAIN NAV */
   const m = document.getElementById("main");
-  document
-    .getElementById("main")
-    .classList.remove("animate__animated", "animate__fadeOutUp");
-  document
-    .getElementById("main")
-    .classList.add("animate__animated", "animate__fadeOutLeft");
+  m.classList.remove("animate__animated", "animate__fadeOutUp");
+  m.classList.add("animate__animated", "animate__fadeOutLeft");
   m.style.opacity = 0;
   m.style.zIndex = -1;
 
@@ -368,12 +354,12 @@ function getLetter(valor) {
       boton.classList.add("goodWord");
 
       var k = 0;
-          while(k < sel.length){
-              if(sel[k] == valor){
-                  var html = document.getElementById('line'+k).innerHTML = valor;
-              }
-              k++;
-              }
+      while (k < sel.length) {
+        if (sel[k] == valor) {
+          var html = (document.getElementById("line" + k).innerHTML = valor);
+        }
+        k++;
+      }
     } else {
       // Si el valor no está en el array sel, el botón se ha clickeado incorrectamente
       badWord.push(valor); // Agregar el valor al array de palabras malas
@@ -428,11 +414,10 @@ function getLetter(valor) {
   }
   /*end canvas*/
   if (intentos <= 0) {
-    document.getElementById("lose").style.opacity = 1;
-    document.getElementById("lose").style.zIndex = 2;
-    document
-      .getElementById("lose")
-      .classList.add("animate__animated", "animate__zoomIn");
+    const ls = document.getElementById("lose");
+    ls.style.opacity = 1;
+    ls.style.zIndex = 2;
+    ls.classList.add("animate__animated", "animate__zoomIn");
 
     document.querySelectorAll("#finalw").forEach(function (element) {
       element.innerHTML = rValue;
@@ -449,11 +434,10 @@ function getLetter(valor) {
       break;
     }
     if (ax1 > sel.length - 2) {
-      document.getElementById("win").style.opacity = 1;
-      document.getElementById("win").style.zIndex = 2;
-      document
-        .getElementById("win")
-        .classList.add("animate__animated", "animate__zoomIn");
+      const wn = document.getElementById("win");
+      wn.style.opacity = 1;
+      wn.style.zIndex = 2;
+      wn.classList.add("animate__animated", "animate__zoomIn");
 
       document.querySelectorAll("#finalw").forEach(function (element) {
         element.innerHTML = rValue;
@@ -476,16 +460,15 @@ function playAgain() {
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  document.getElementById("lose").style.opacity = 0;
-  document.getElementById("lose").style.zIndex = -1;
-  document
-    .getElementById("lose")
-    .classList.remove("animate__animated", "animate__zoomIn");
-  document.getElementById("win").style.opacity = 0;
-  document.getElementById("win").style.zIndex = -1;
-  document
-    .getElementById("win")
-    .classList.remove("animate__animated", "animate__zoomIn");
+  const ls = document.getElementById("lose");
+  ls.style.opacity = 0;
+  ls.style.zIndex = -1;
+  ls.classList.remove("animate__animated", "animate__zoomIn");
+
+  const wn = document.getElementById("win");
+  wn.style.opacity = 0;
+  wn.style.zIndex = -1;
+  wn.classList.remove("animate__animated", "animate__zoomIn");
 
   document.getElementById("finalw").innerHTML = "";
 
@@ -509,7 +492,7 @@ function playAgain() {
   sel = [];
   badWord = [];
   intentos = 10;
-  clickeados = []
+  clickeados = [];
   ctrl = true;
   //get math number
   if (match == 2) {
@@ -528,17 +511,17 @@ function gotoMenu() {
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  document.getElementById("lose").style.opacity = 0;
-  document.getElementById("lose").style.zIndex = -1;
-  document
-    .getElementById("lose")
-    .classList.remove("animate__animated", "animate__zoomIn");
+  const ls = document.getElementById("lose");
+  ls.style.opacity = 0;
+  ls.style.zIndex = -1;
+  ls.classList.remove("animate__animated", "animate__zoomIn");
+
+  const wn = document.getElementById("win");
+  wn.style.opacity = 0;
+  wn.style.zIndex = -1;
+  wn.classList.remove("animate__animated", "animate__zoomIn");
+
   document.getElementById("finalw").innerHTML = "";
-  document.getElementById("win").style.opacity = 0;
-  document.getElementById("win").style.zIndex = -1;
-  document
-    .getElementById("win")
-    .classList.remove("animate__animated", "animate__zoomIn");
 
   // Remover la clase "badWord" de todos los divs con clase "keyb"
   const keybDivs = document.querySelectorAll(".keyb");

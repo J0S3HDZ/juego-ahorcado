@@ -17,4 +17,4 @@ Juego del Ahorcado (Hangman)
 
 ### Cambios pendientes de la versíon 2
 - Sitio responsivo.
-- Remover anuncios.
+- Añadir ads | Poder remover ads.
