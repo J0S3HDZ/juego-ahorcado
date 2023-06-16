@@ -8,13 +8,12 @@ Juego del Ahorcado (Hangman)
 ![JS](https://img.shields.io/badge/JavaScript-5A5A5A?logo=javascript&logoColor=yelllow)
 
 -----
-## ✔️ Versión 2
-- Nuevo diseño web.
-- Partidas custom (crea tu lista de palabras).
-- Nuevas opciones que serán funcionales en una versión siguiente.
-- Donativos a el desarrollador.
-- Lista de más de 5000 palabras.
+## ✔️ Versión 2.1
+- Rachas de victorias.
+- Rediseño de HUD en partida.
+- Resolución de errores.
 
-### Cambios pendientes de la versíon 2
-- Sitio responsivo.
-- Añadir ads | Poder remover ads.
+-----
+### 📚 Librerias
+- Bootstrap icons.
+- Font Awesome Icons.

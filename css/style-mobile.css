@@ -136,15 +136,27 @@
   .btngame {
     background-color: var(--quinary);
     color: var(--secundary);
-    border: solid var(--quinary);
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 10px;
-    width: 100%;
-    font-size: 10px;
+    width: fit-content;
     margin: 5px;
+    font-size: 14px;
     transition: 0.3s;
   }
-
+  .bubble-text {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background-color: var(--black);
+    color: var(--secondary);
+    padding: 8px;
+    border-radius: 8px;
+    opacity: 0;
+    font-size: 12px;
+    transition: opacity 0.2s ease-in-out;
+  }
   .stats {
     display: flex;
     width: 100%;
@@ -152,16 +164,16 @@
     justify-content: space-between;
     box-sizing: border-box;
   }
-  .intent {
-    color: var(--secundary);
-    background-color: transparent;
-    border: 1px dashed var(--secundary);
-    width: 100%;
+  .intent,.streak {
+    width: fit-content;
     margin: 5px;
-    padding: 5px;
     border-radius: 10px;
     text-align: center;
-    font-size: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    white-space: nowrap;
+
+
   }
   .game_ends {
     width: 100%;

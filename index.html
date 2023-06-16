@@ -15,6 +15,7 @@
     <link rel="icon" href="assets/img/fav2.ico?v=2" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="https://kit.fontawesome.com/b5cb11aed7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -61,11 +62,26 @@
                         <div class="boxWords" id="words"></div>
                     </div>
                     <div class="stats">
-                        <button class="btngame" onclick="playAgain()">Juego nuevo</button>
-                        <button class="btngame" onclick="gotoMenu()">Desistir</button>
-                        <div class="intent" id="intent">Intentos: _</div>
-                        <button class="btngame" onclick="soon()" style="width: fit-content;"><i
-                                class="bi bi-volume-up-fill"></i></button>
+                        <button class="btngame" style="color: var(--blue)" onclick="playAgain(1)">
+                            <i class="fa-solid fa-rotate fa-lg"></i>
+                            <span class="bubble-text">Juego nuevo</span>
+                        </button>
+                        <button class="btngame" style="color: var(--yellow)" onclick="gotoMenu()">
+                            <i class="fa-solid fa-person-walking-arrow-right fa-lg"></i>
+                            <span class="bubble-text">Desistir</span>
+                        </button>
+                        <button class="intent" id="intent">
+                            <i class="fa-solid fa-hear fa-lg"></i>
+                            <span class="bubble-text">Intentos</span>
+                        </button>
+                        <button class="streak" id="streak">
+                            <i class="fa-solid fa-fire fa-lg"></i> 0
+                            <span class="bubble-text">Racha</span>
+                        </button>
+                        <button class="btngame" onclick="soon()" style="width: fit-content;">
+                            <i class="fa-solid fa-volume-high"></i>
+                            <span class="bubble-text">Sonido</span>
+                        </button>
                     </div>
 
                     <div class="teclado" id="tcl">
@@ -106,6 +122,7 @@
                             <button onclick="getLetter('M')" class="keyb" id="M">M</button>
                         </div>
                     </div>
+                    
                 </article>
             </article>
         </div>
@@ -180,8 +197,8 @@
             <img class="txt_game_end" src="assets/img/winner-imgs/textwin2.png">
             <p class="theword">La palabra era: <a id="finalw">_</a></p>
             <div class="game_end_links">
-                <a onclick="playAgain()">Volver a jugar</a>
-                <a onclick="gotoMenu()">Volver al menu</a>
+                <a style="cursor:pointer" onclick="playAgain(0)">Siguiente palabra</a>
+                <a style="cursor:pointer" onclick="gotoMenu()">Volver al menu</a>
             </div>
         </div>
     </section>
@@ -191,13 +208,13 @@
             <img class="txt_game_end" src="assets/img/loser-imgs/loseimg2.png">
             <p class="theword">La palabra era: <a id="finalw">_</a></p>
             <div class="game_end_links">
-                <a style="cursor:pointer" onclick="playAgain()">Volver a jugar</a>
+                <a style="cursor:pointer" onclick="playAgain(1)">Volver a jugar</a>
                 <a style="cursor:pointer" onclick="gotoMenu()">Volver al menu</a>
             </div>
         </div>
     </section>
 
-    <div class="dev">Powered by Psycho ⚡ | All rights reserved &copy; 2023 | Release v2.0</div>
+    <div class="dev">Powered by Psycho ⚡ | All rights reserved &copy; 2023 | Release v2.1</div>
 
 </body>
 <script src="assets/js/script-release.js"></script>

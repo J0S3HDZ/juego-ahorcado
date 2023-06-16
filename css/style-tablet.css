@@ -7,5 +7,7 @@
   .logo_banner {
     max-width: 100%;
     width: 50vw;
+    display: block;
+    margin: auto;
   }
 }

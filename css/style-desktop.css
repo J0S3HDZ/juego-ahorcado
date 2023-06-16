@@ -3,6 +3,8 @@
     width: auto;
     max-width: 750px;
     padding: 40px;
+    display: block;
+    margin: auto;
   }
   .logo_banner {
     max-width: 100%;
@@ -234,22 +236,32 @@
   .btngame {
     background-color: var(--quinary);
     color: var(--secundary);
-    border: solid var(--quinary);
     padding: 10px 15px;
     border-radius: 10px;
-    width: 100%;
+    width: fit-content;
     margin: 5px;
-    font-size: 12px;
+    font-size: 16px;
     transition: 0.3s;
   }
-  .btngame:hover {
-    background-color: var(--blue1);
-    border: solid var(--blue1);
-  }
-  .btngame:active {
-    background-color: var(--blue2);
-    border: solid var(--blue2);
-  }
+ 
+
+.bubble-text {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: var(--black);
+  color: var(--secondary);
+  padding: 8px;
+  border-radius: 8px;
+  opacity: 0;
+  font-size: 12px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+  
   .stats {
     display: flex;
     width: 100%;
@@ -258,16 +270,14 @@
     padding: 10px 20px;
     box-sizing: border-box;
   }
-  .intent {
-    color: var(--secundary);
-    background-color: transparent;
-    border: 2px dotted var(--secundary);
-    width: 100%;
+  .intent,.streak {
+    width: fit-content;
     margin: 5px;
-    padding: 10px 15px;
     border-radius: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
+    padding: 10px 15px;
+
   }
   hr {
     background-color: transparent;

@@ -16,6 +16,7 @@ var badWord = []; //BAD WORDS CHOSEN
 var auxLinea;
 var match = 0; /* IND = 1 / CUSTOM = 2 */
 var clickeados = [];
+var streak = 0;
 
 /* Individual match */
 function playind() {
@@ -28,7 +29,7 @@ function playind() {
   /* ACTIVE INDIVIDUAL MATCH */
   match = 1;
   /* SHOW INTENTOS*/
-  document.getElementById("intent").innerHTML = "Intentos: " + intentos;
+  document.getElementById("intent").innerHTML = "<i class='fa-solid fa-heart'></i> " + intentos + "<span class='bubble-text'>Intentos</span>";
 
   /* READ WORDS JSON AND GET THE NEW WORD */
   fetch("words/es.json")
@@ -233,7 +234,7 @@ function playcust() {
     button.disabled = false;
   });
   /* SHOW INTENTOS */
-  document.getElementById("intent").innerHTML = "Intentos: " + intentos;
+  document.getElementById("intent").innerHTML = "<i class='fa-solid fa-heart'></i> " + intentos + "<span class='bubble-text'>Intentos</span>";
 
   /* ACTIVE INDIVIDUAL MATCH */
   match = 2;
@@ -370,7 +371,7 @@ function getLetter(valor) {
       intentos--;
 
       // Actualizar la etiqueta que muestra el número de intentos
-      document.getElementById("intent").innerHTML = "Intentos: " + intentos;
+      document.getElementById("intent").innerHTML = "<i class='fa-solid fa-heart'></i> " + intentos + "<span class='bubble-text'>Intentos</span>";
     }
   }
 
@@ -426,6 +427,8 @@ function getLetter(valor) {
     gvw.opacity = 0;
 
     ctrl = false;
+
+    resetStreak();
   }
 
   for (var ax1 = 0; ax1 < sel.length; ax1++) {
@@ -447,10 +450,25 @@ function getLetter(valor) {
 
       ctrl = false;
       activateConfetti();
+      winStreak();
     }
   }
 }
-function playAgain() {
+function winStreak(){
+  streak++;
+  document.getElementById("streak").innerHTML = "<i class='fa-solid fa-fire fa-lg'></i> " + streak + "<span class='bubble-text'>Racha</span>";
+  
+}
+function resetStreak(){
+  streak = 0;
+  document.getElementById("streak").innerHTML = "<i class='fa-solid fa-fire fa-lg'></i> " + streak + "<span class='bubble-text'>Racha</span>";
+}
+function playAgain(control) {
+
+  if(control == 1){
+    resetStreak();
+  }
+
   auxLinea = 0;
   /*  Ajuste lineas  */
   while (auxLinea < sel.length) {
@@ -494,6 +512,9 @@ function playAgain() {
   intentos = 10;
   clickeados = [];
   ctrl = true;
+
+  //winstreaks quedan guardados
+
   //get math number
   if (match == 2) {
     playcust();
@@ -538,6 +559,8 @@ function gotoMenu() {
   intentos = 10;
   clickeados = [];
   ctrl = false;
+
+  resetStreak();
 
   const cards = document.querySelectorAll(".alert_card");
 
